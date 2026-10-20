@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng 20/10</title>
+    <style>
+     
+      body {
+        text-align: center;
+        background-color: #1a0229;
+        font-family: Arial, sans-serif;
+        padding: 20px 10px;
+        margin: 0;
+        color: pink;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      
+      .box {
+        width: 90%;
+        max-width: 380px;
+        padding: 20px;
+        border: 2px solid pink;
+        border-radius: 12px;
+        background-color: #2a0845;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      h2 {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+      
+      .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: pink;
+        color: #2a0845;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: transform 0.1s ease;
+      }
+
+      button:active {
+        transform: scale(0.96);
+      }
+
+      /* Ô chứa lời chúc hiện ra */
+      #result {
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 192, 203, 0.3);
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 1.5;
+        min-height: 60px;
+        transition: opacity 0.3s ease;
+      }
+
+    
+      .fade-out {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="box">
+      <h2>Hôm nay tâm trạng thế nào? </h2>
+      
+      <div class="btn-group">
+        <button onclick="showMood('vui')">Cảm thấy vui?</button>
+        <button onclick="showMood('buon')">Cảm thấy buồn?</button>
+        <button onclick="showMood('met')">Cảm thấy mệt mỏi?</button>
+      </div>
+
+      <div id="result">Hôm nay thì chắc vui lắm nhỉ? </div>
+    </div>
+
+    <script>
+      function showMood(type) {
+        let res = document.getElementById('result');
+        
+        
+        res.classList.add('fade-out');
+
+        setTimeout(function() {
+          if (type === 'vui') {
+            res.innerHTML = "Đúng là 1 cô gái dễ thương mà xưng đáng được niềm vui lớn hơn thế nên chúc bạn 20/10 vui vẻ";
+          } else if (type === 'buon') {
+            res.innerHTML = "sau lại buồn thế này,vui vẻ lên chứ bạn tui ơi không có gì nên buồn cả hôm nay là ngày đặc biệt bn nên vui vẻ nhé và chúc tất cả những ngày sau của bn đều luôn vui vẻ";
+          } else if (type === 'met') {
+            res.innerHTML = "Mệt mỏi hả có cần giúp đỡ gì ko bn ơi hôm nay bn đã là tuyệt vời nhất r nên cứ bước tiếp nhé";
+          }
+
+          res.classList.remove('fade-out');
+        }, 200);
+      }
+    </script>
+
+  </body>
+</html>
